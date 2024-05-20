@@ -1,0 +1,29 @@
+Option Explicit
+
+Sub SendImageViaWhatsAppAPI()
+    Dim strPhoneNumber As String
+    Dim ws As Worksheet
+    Dim img As shape
+
+    ' Set the worksheet where the phone number is located
+    Set ws = ThisWorkbook.Sheets("Whatsapp send") ' Change "Data" to your sheet name
+
+    ' Get phone number
+    strPhoneNumber = ws.Range("J10").Value
+
+    ' Set the image object (with the specific name "Picture 4")
+    Set img = ws.Shapes("Picture 4")
+
+    ' Copy the image to the clipboard
+    img.Copy
+
+    ' Construct the WhatsApp API URL with the phone number
+    Dim whatsappUrl As String
+    whatsappUrl = "https://api.whatsapp.com/send?phone=" & strPhoneNumber
+
+    ' Open the WhatsApp API link in the default web browser
+    Shell "explorer """ & whatsappUrl & """", vbNormalFocus
+
+    ' Clear the clipboard
+    Application.CutCopyMode = False
+End Sub
