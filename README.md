@@ -19,7 +19,7 @@ This project implements a personalized image generator for academic profiles, in
 
 3. **Image Generation**:
    - The system uses VLOOKUP functions to create a grade card-like structure containing the individual's academic details.
-   - ![](snapshots/Selection%20%of%20names%20.png)
+   - ![](snapshots/Selection%20%of%20names.png)
 
 4. **WhatsApp Integration**:
    - Clicking the generated image triggers the VBA code, which opens WhatsApp, redirects to the individual's number, and copies the image to the clipboard for sharing.
